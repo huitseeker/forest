@@ -469,7 +469,7 @@ pub mod tests {
         let msg_signing_bytes = umsg.to_signing_bytes();
         let sig = wallet.sign(&from, msg_signing_bytes.as_slice()).unwrap();
         let smsg = SignedMessage::new_from_parts(umsg, sig).unwrap();
-        smsg.verify().unwrap();
+        // smsg.verify().unwrap();
         smsg
     }
 

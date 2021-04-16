@@ -176,17 +176,20 @@ impl MsgChain {
             self.move_backward();
         }
     }
+
     pub(crate) fn invalidate(&mut self) {
         let mc = self.curr_mut();
         mc.valid = false;
         mc.msgs = Vec::new();
         self.chain.drain((self.index + 1)..);
     }
+
     #[allow(dead_code)]
     pub(crate) fn set_effective_perf(&mut self, bp: f64) {
         self.curr_mut().bp = bp;
         self.set_eff_perf();
     }
+
     #[allow(dead_code)]
     pub(crate) fn set_eff_perf(&mut self) {
         let prev = match self.prev() {

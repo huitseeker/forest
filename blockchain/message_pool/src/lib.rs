@@ -4,6 +4,7 @@
 mod block_prob;
 mod config;
 mod errors;
+mod m_chain;
 mod msg_chain;
 mod msgpool;
 
